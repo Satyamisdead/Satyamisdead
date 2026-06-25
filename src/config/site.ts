@@ -22,8 +22,8 @@ export const siteConfig = {
     "Curbi", 
     "Flat Rate Bookkeeping"
   ],
-  url: "https://satyamtiwari.dev", // Default canonical URL
-  ogImage: "https://satyamtiwari.dev/og-image.png",
+  url: "https://satyamtiwari.vercel.app", // Default canonical URL
+  ogImage: "https://satyamtiwari.vercel.app/og-image.png",
   whatsappNumber: "919322336638", // Editable WhatsApp number (placeholder)
   email: "cosmosecuria@gmail.com", // Contact email placeholder
   resumeUrl: "/Satyam_Tiwari_Resume.pdf",
@@ -43,7 +43,7 @@ export const siteConfig = {
       "Cyber Security Consultant"
     ],
     description: "I help startups and businesses transform ideas into powerful digital products including Mobile Apps, Websites, Admin Panels, APIs and Security Solutions.",
-    avatarUrl: "https://api.dicebear.com/9.x/adventurer/svg?seed=SatyamTiwari"
+    avatarUrl: "/satyam.jpg"
   },
 
   about: {

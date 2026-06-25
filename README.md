@@ -1,15 +1,15 @@
 # Hi there, I'm Satyam Tiwari! 👋
 
 <p align="center">
-  <a href="https://satyamtiwari.dev">
-    <img src="https://api.dicebear.com/9.x/adventurer/svg?seed=SatyamTiwari" width="150" height="150" alt="Satyam Tiwari Avatar" />
+  <a href="https://satyamtiwari.vercel.app/">
+    <img src="https://github.com/Satyamisdead/Satyamisdead/blob/main/public/satyam.jpg?raw=true" width="130" height="130" style="border-radius: 50%;" alt="Satyam Tiwari Avatar" />
   </a>
 </p>
 
 <h3 align="center">Founder, Full Stack Developer & Cyber Security Consultant</h3>
 
 <p align="center">
-  <a href="https://satyamtiwari.dev"><b>🌐 Visit My Portfolio Website</b></a> •
+  <a href="https://satyamtiwari.vercel.app/"><b>🌐 Visit My Portfolio Website</b></a> •
   <a href="mailto:cosmosecuria@gmail.com"><b>📧 Email Me</b></a> •
   <a href="https://linkedin.com/in/satyamtiwarime"><b>💼 LinkedIn</b></a> •
   <a href="https://wa.me/919322336638"><b>💬 WhatsApp Direct Chat</b></a>
@@ -94,7 +94,7 @@ I help startups and businesses transform ideas into powerful, highly secure digi
 
 ### 🤝 Connect with Me
 
-- 🌐 **Portfolio Website**: [satyamtiwari.dev](https://satyamtiwari.dev)
+- 🌐 **Portfolio Website**: [satyamtiwari.vercel.app](https://satyamtiwari.vercel.app/)
 - 💼 **LinkedIn**: [/in/satyamtiwarime](https://linkedin.com/in/satyamtiwarime)
 - 📧 **Business Email**: [cosmosecuria@gmail.com](mailto:cosmosecuria@gmail.com)
 - 💬 **WhatsApp Direct**: [+91 9322336638](https://wa.me/919322336638)

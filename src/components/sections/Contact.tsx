@@ -61,7 +61,14 @@ export default function Contact() {
 
     setIsSubmitting(true);
 
-    // Simulate API request
+    // Construct formatted WhatsApp message
+    const text = encodeURIComponent(
+      `Hi Satyam,\n\nI want to discuss a new project:\n\n*Name:* ${formData.name}\n*Email:* ${formData.email}\n*Project Type:* ${formData.projectType}\n*Budget:* ${formData.budget}\n*Details:* ${formData.message}`
+    );
+
+    // Redirect to WhatsApp instantly (synchronously in response to click) to bypass popup blockers
+    window.open(`https://wa.me/${siteConfig.whatsappNumber}?text=${text}`, "_blank");
+
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
@@ -74,14 +81,6 @@ export default function Contact() {
         colors: ["#00D600", "#ffffff", "#008800"]
       });
 
-      // Construct formatted WhatsApp message
-      const text = encodeURIComponent(
-        `Hi Satyam,\n\nI want to discuss a new project:\n\n*Name:* ${formData.name}\n*Email:* ${formData.email}\n*Project Type:* ${formData.projectType}\n*Budget:* ${formData.budget}\n*Details:* ${formData.message}`
-      );
-
-      // Redirect to WhatsApp
-      window.open(`https://wa.me/${siteConfig.whatsappNumber}?text=${text}`, "_blank");
-
       // Reset form
       setFormData({
         name: "",
@@ -90,7 +89,7 @@ export default function Contact() {
         budget: "$5k - $15k",
         message: ""
       });
-    }, 1200);
+    }, 800);
   };
 
   const handleBookCall = () => {
