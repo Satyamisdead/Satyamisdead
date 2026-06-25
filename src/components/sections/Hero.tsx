@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { siteConfig } from "@/config/site";
-import { ArrowRight, Code, Download, MessageSquare } from "lucide-react";
+import { ArrowRight, Code, MessageSquare } from "lucide-react";
 import Image from "next/image";
 
 export default function Hero() {
@@ -119,15 +119,6 @@ export default function Hero() {
                   <MessageSquare className="h-4 w-4" />
                   Hire Me
                 </button>
-
-                <a
-                  href={siteConfig.resumeUrl}
-                  download
-                  className="inline-flex items-center justify-center gap-2 rounded-md border border-white/10 bg-[#101010] px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:border-accent/40 hover:bg-accent/5 hover:text-accent"
-                >
-                  <Download className="h-4 w-4" />
-                  Resume
-                </a>
               </div>
             </motion.div>
           </div>
@@ -146,11 +137,20 @@ export default function Hero() {
               {/* Spinning futuristic border */}
               <div className="absolute inset-6 rounded-full border border-dashed border-accent/20 animate-spin-slow" />
 
-              {/* Floating inner glass orb container */}
+              {/* Floating inner glass orb container with 3D wobble */}
               <motion.div
-                animate={{ y: [0, -15, 0] }}
-                transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-                className="relative z-10 w-[240px] h-[240px] sm:w-[300px] sm:h-[300px] md:w-[340px] md:h-[340px] rounded-full glass flex items-center justify-center border-accent/20 shadow-2xl shadow-black/80"
+                 animate={{ 
+                   y: [0, -15, 0],
+                   rotateX: [0, 5, -5, 0],
+                   rotateY: [0, -7, 7, 0]
+                 }}
+                 transition={{ 
+                   repeat: Infinity, 
+                   duration: 8, 
+                   ease: "easeInOut" 
+                 }}
+                 style={{ transformStyle: "preserve-3d", perspective: 1000 }}
+                 className="relative z-10 w-[240px] h-[240px] sm:w-[300px] sm:h-[300px] md:w-[340px] md:h-[340px] rounded-full glass flex items-center justify-center border-accent/20 shadow-2xl shadow-black/80"
               >
                 {/* Dicebear Avatar SVG */}
                 <Image

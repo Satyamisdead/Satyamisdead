@@ -15,14 +15,26 @@ interface Project {
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [coords, setCoords] = useState({ x: 0, y: 0 });
+  const [rotate, setRotate] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
     const rect = cardRef.current.getBoundingClientRect();
-    setCoords({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
-    });
+    const width = rect.width;
+    const height = rect.height;
+    
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+    setCoords({ x: mouseX, y: mouseY });
+
+    // 3D rotation calculation
+    const rX = -(mouseY - height / 2) / 12;
+    const rY = (mouseX - width / 2) / 12;
+    setRotate({ x: rX, y: rY });
+  };
+
+  const handleMouseLeave = () => {
+    setRotate({ x: 0, y: 0 });
   };
 
   const isLive = project.status === "live";
@@ -31,10 +43,17 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
     <motion.div
       ref={cardRef}
       onMouseMove={handleMouseMove}
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
+      onMouseLeave={handleMouseLeave}
+      initial={{ opacity: 0, y: 50, rotateX: 12, rotateY: -8 }}
+      whileInView={{ opacity: 1, y: 0, rotateX: 0, rotateY: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ type: "spring", stiffness: 80, damping: 15, delay: index * 0.05 }}
+      style={{
+        transformStyle: "preserve-3d",
+        perspective: 1000,
+        rotateX: rotate.x,
+        rotateY: rotate.y
+      }}
       className="relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/5 bg-[#101010] p-6 sm:p-8 transition-all duration-300 hover:border-accent/30 hover:shadow-[0_0_30px_rgba(0,214,0,0.05)] group"
     >
       {/* Dynamic Cursor Spotlight Radial Mask */}
