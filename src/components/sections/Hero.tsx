@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { siteConfig } from "@/config/site";
 import { ArrowRight, Code, MessageSquare } from "lucide-react";
-import Image from "next/image";
 
 export default function Hero() {
   const [wordIndex, setWordIndex] = useState(0);
@@ -137,31 +136,53 @@ export default function Hero() {
               {/* Spinning futuristic border */}
               <div className="absolute inset-6 rounded-full border border-dashed border-accent/20 animate-spin-slow" />
 
-              {/* Floating inner glass orb container with 3D wobble */}
-              <motion.div
-                 animate={{ 
-                   y: [0, -15, 0],
-                   rotateX: [0, 5, -5, 0],
-                   rotateY: [0, -7, 7, 0]
-                 }}
-                 transition={{ 
-                   repeat: Infinity, 
-                   duration: 8, 
-                   ease: "easeInOut" 
-                 }}
-                 style={{ transformStyle: "preserve-3d", perspective: 1000 }}
-                 className="relative z-10 w-[240px] h-[240px] sm:w-[300px] sm:h-[300px] md:w-[340px] md:h-[340px] rounded-full glass flex items-center justify-center border-accent/20 shadow-2xl shadow-black/80"
-              >
-                {/* Dicebear Avatar SVG */}
-                <Image
-                  src={siteConfig.hero.avatarUrl}
-                  alt={siteConfig.name}
-                  width={340}
-                  height={340}
-                  priority
-                  className="object-contain p-4 select-none drop-shadow-[0_10px_15px_rgba(0,0,0,0.5)]"
-                />
-              </motion.div>
+               {/* Floating inner glass IDE window with 3D wobble */}
+               <motion.div
+                  animate={{ 
+                    y: [0, -15, 0],
+                    rotateX: [0, 4, -4, 0],
+                    rotateY: [0, -6, 6, 0]
+                  }}
+                  transition={{ 
+                    repeat: Infinity, 
+                    duration: 8, 
+                    ease: "easeInOut" 
+                  }}
+                  style={{ transformStyle: "preserve-3d", perspective: 1000 }}
+                  className="relative z-10 w-[280px] h-[280px] sm:w-[340px] sm:h-[320px] rounded-2xl glass flex flex-col justify-between border-accent/20 shadow-2xl shadow-black/80 p-6 text-left font-mono"
+               >
+                 {/* Window Header */}
+                 <div className="flex items-center space-x-2 border-b border-white/5 pb-3">
+                   <span className="h-3 w-3 rounded-full bg-[#ff5f56]" />
+                   <span className="h-3 w-3 rounded-full bg-[#ffbd2e]" />
+                   <span className="h-3 w-3 rounded-full bg-[#27c93f]" />
+                   <span className="text-[11px] text-secondary-text ml-2">satyam.ts</span>
+                 </div>
+
+                 {/* Code Editor Body */}
+                 <div className="mt-4 flex-1 space-y-1.5 text-[11px] sm:text-[13px] text-white/90">
+                   <p><span className="text-accent">const</span> developer = &#123;</p>
+                   <p className="pl-4">name: <span className="text-accent">&apos;Satyam Tiwari&apos;</span>,</p>
+                   <p className="pl-4">role: <span className="text-accent">&apos;Founder &amp; DevSecOps&apos;</span>,</p>
+                   <p className="pl-4">experience: <span className="text-[#00D600]">&apos;7+ Years&apos;</span>,</p>
+                   <p className="pl-4">skills: [</p>
+                   <p className="pl-8"><span className="text-[#00D600]">&apos;Next.js&apos;</span>, <span className="text-[#00D600]">&apos;React Native&apos;</span>,</p>
+                   <p className="pl-8"><span className="text-[#00D600]">&apos;TypeScript&apos;</span>, <span className="text-[#00D600]">&apos;Docker&apos;</span>,</p>
+                   <p className="pl-8"><span className="text-[#00D600]">&apos;Cyber Security&apos;</span></p>
+                   <p className="pl-4">],</p>
+                   <p className="pl-4">hardened: <span className="text-[#00D600]">true</span></p>
+                   <p>&#125;;</p>
+                 </div>
+
+                 {/* Window Footer */}
+                 <div className="border-t border-white/5 pt-3 flex items-center justify-between text-[10px] text-secondary-text">
+                   <span>UTF-8</span>
+                   <span className="flex items-center gap-1.5">
+                     <span className="h-2 w-2 rounded-full bg-accent animate-ping" />
+                     active
+                   </span>
+                 </div>
+               </motion.div>
 
               {/* Floating Tech Badges */}
               <motion.div

@@ -1,9 +1,7 @@
 # Hi there, I'm Satyam Tiwari! 👋
 
 <p align="center">
-  <a href="https://satyamtiwari.vercel.app/">
-    <img src="https://github.com/Satyamisdead/Satyamisdead/blob/main/public/satyam.jpg?raw=true" width="130" height="130" style="border-radius: 50%;" alt="Satyam Tiwari Avatar" />
-  </a>
+  <img src="https://readme-typing-svg.demolab.com?font=Space+Grotesk&size=24&duration=2500&pause=1000&color=00D600&center=true&vCenter=true&width=450&lines=Building+Ideas+Into+Reality.;Full+Stack+Developer;Mobile+App+Developer;Cyber+Security+Consultant" alt="Satyam Tiwari Typing" />
 </p>
 
 <h3 align="center">Founder, Full Stack Developer & Cyber Security Consultant</h3>
