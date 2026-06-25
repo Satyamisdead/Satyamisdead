@@ -23,7 +23,7 @@ export const siteConfig = {
     "Flat Rate Bookkeeping"
   ],
   url: "https://satyamtiwari.vercel.app", // Default canonical URL
-  ogImage: "https://satyamtiwari.vercel.app/og-image.png",
+  ogImage: "https://satyamtiwari.vercel.app/og-image.jpg",
   whatsappNumber: "919322336638", // Editable WhatsApp number (placeholder)
   email: "cosmosecuria@gmail.com", // Contact email placeholder
   resumeUrl: "/Satyam_Tiwari_Resume.pdf",
