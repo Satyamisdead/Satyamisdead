@@ -2,7 +2,7 @@
 import React, { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { siteConfig } from "@/config/site";
-import { Mail, MapPin, Calendar, Send, CheckCircle2 } from "lucide-react";
+import { MessageSquare, MapPin, Calendar, Send, CheckCircle2 } from "lucide-react";
 import confetti from "canvas-confetti";
 
 export default function Contact() {
@@ -74,6 +74,14 @@ export default function Contact() {
         colors: ["#00D600", "#ffffff", "#008800"]
       });
 
+      // Construct formatted WhatsApp message
+      const text = encodeURIComponent(
+        `Hi Satyam,\n\nI want to discuss a new project:\n\n*Name:* ${formData.name}\n*Email:* ${formData.email}\n*Project Type:* ${formData.projectType}\n*Budget:* ${formData.budget}\n*Details:* ${formData.message}`
+      );
+
+      // Redirect to WhatsApp
+      window.open(`https://wa.me/${siteConfig.whatsappNumber}?text=${text}`, "_blank");
+
       // Reset form
       setFormData({
         name: "",
@@ -82,7 +90,7 @@ export default function Contact() {
         budget: "$5k - $15k",
         message: ""
       });
-    }, 1500);
+    }, 1200);
   };
 
   const handleBookCall = () => {
@@ -126,12 +134,17 @@ export default function Contact() {
             <div className="space-y-4">
               <div className="flex items-center p-4 glass rounded-xl border border-white/5">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/10 border border-accent/20 text-accent">
-                  <Mail className="h-5 w-5" />
+                  <MessageSquare className="h-5 w-5" />
                 </div>
                 <div className="ml-4">
-                  <span className="text-xs text-secondary-text block">Drop me an email</span>
-                  <a href={`mailto:${siteConfig.email}`} className="text-sm font-semibold text-white hover:text-accent transition-colors">
-                    {siteConfig.email}
+                  <span className="text-xs text-secondary-text block">Chat on WhatsApp</span>
+                  <a 
+                    href={`https://wa.me/${siteConfig.whatsappNumber}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-semibold text-white hover:text-accent transition-colors"
+                  >
+                    +91 {siteConfig.whatsappNumber.slice(2, 6)} {siteConfig.whatsappNumber.slice(6, 12)}
                   </a>
                 </div>
               </div>
